@@ -1,0 +1,5 @@
+// ignore_for_file: constant_identifier_names
+
+const String STORAGE_DEVICE_FIRST_OPEN_KEY = 'STORAGE_DEVICE_FIRST_OPEN_KEY';
+const String STORAGE_USER_TOKEN_KEY = 'STORAGE_USER_TOKEN_KEY';
+const String STORAGE_USER_PROFILE_KEY = 'STORAGE_USER_PROFILE_KEY';

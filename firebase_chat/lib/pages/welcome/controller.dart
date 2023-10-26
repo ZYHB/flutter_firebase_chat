@@ -1,3 +1,5 @@
+import 'package:firebase_chat/config/config_index.dart';
+import 'package:firebase_chat/store/store_index.dart';
 import 'package:get/get.dart';
 
 import 'state.dart';
@@ -5,18 +7,13 @@ import 'state.dart';
 class WelcomeController extends GetxController {
   final state = WelcomeState();
   WelcomeController();
-  @override
-  void onInit() {
-    super.onInit();
+
+  changePage(int index) async {
+    state.index.value = index;
   }
 
-  @override
-  void onReady() {
-    super.onReady();
-  }
-
-  @override
-  void onClose() {
-    super.onClose();
+  handleSignIn() async {
+    await ConfigStore.to.saveAlreadyOpen();
+    Get.offAndToNamed(PageIdConfig.sign_in);
   }
 }

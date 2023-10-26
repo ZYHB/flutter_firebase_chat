@@ -10,8 +10,12 @@ class SignInPage extends GetView<SignInController> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        child: const Center(
-          child: Text("登录"),
+        child: Center(
+          child: TextButton(
+              onPressed: () {},
+              child: Container(
+                child: Text("Google Login"),
+              )),
         ),
       ),
     );
