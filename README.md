@@ -2,6 +2,10 @@
 
 使用 firebase 服务的 Flutter 聊天应用程序。此聊天应用程序基于 firebase firestore
 
+### 2023-10-28
+
+一、修复 iOS 模拟器运行时提示错误`存取权遭封锁:授权错误`
+
 ### 2023-10-27
 
 一、[创建数据库](https://console.firebase.google.com/project/flutter-firebase-chat-fbd3c/firestore)
@@ -86,6 +90,13 @@ Learn more about using this file and next steps from the documentation:
 
 > https://firebase.google.com/docs/flutter/setup
 ```
+
+完成后会在对 ios、andorid、web 三个平台生成对应的配置文件.
+ios: GoogleService-Info.plist
+android: google-services.json
+web:
+
+备注：在[我的应用](https://console.firebase.google.com/project/flutter-firebase-chat-fbd3c/settings/general/android:com.example.firebase_chat?)中，iOS、Android 两个应用分别有 GoogleService-Info.plist 和 google-services.json 文件，需要下载到本地，与之前自动生成的文件进行对比，如果不同，则需要手动替换。
 
 3、添加依赖
 

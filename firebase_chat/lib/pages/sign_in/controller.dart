@@ -1,23 +1,14 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_chat/google_sign_in_options.dart';
 import 'package:firebase_chat/models/models_index.dart';
 import 'package:firebase_chat/store/store_index.dart';
+import 'package:firebase_chat/utils/utils_index.dart';
 import 'package:get/get.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:oktoast/oktoast.dart';
 import 'state.dart';
 
-/// The scopes required by this application.
-const List<String> scopes = <String>[
-  'openid'
-  // 'email',
-  // 'https://www.googleapis.com/auth/contacts.readonly',
-];
-
-GoogleSignIn _googleSignIn = GoogleSignIn(
-  // Optional clientId
-  clientId:
-      'com.googleusercontent.apps.294954183165-ncm3folubpkkn2ggvmebl99lb9cl2t34',
-  scopes: scopes,
-);
+GoogleSignIn _googleSignIn = GoogleSignInOptions.currentPlatform;
 
 class SignInController extends GetxController {
   final state = SignInState();
@@ -71,12 +62,12 @@ class SignInController extends GetxController {
                   })
               .add(data);
         }
-        print("login success");
+        showToast('login success');
       } else {
-        print("user == null");
+        errorToast("user == null");
       }
     } catch (e) {
-      print(e);
+      errorToast('$e');
     }
   }
 }

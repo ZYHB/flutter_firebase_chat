@@ -70,5 +70,7 @@ class DefaultFirebaseOptions {
     projectId: 'flutter-firebase-chat-fbd3c',
     storageBucket: 'flutter-firebase-chat-fbd3c.appspot.com',
     iosBundleId: 'com.example.firebaseChat',
+    iosClientId:
+        'com.googleusercontent.apps.294954183165-ncm3folubpkkn2ggvmebl99lb9cl2t34',
   );
 }
