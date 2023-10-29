@@ -12,7 +12,7 @@ class SignInPage extends GetView<SignInController> {
       body: Container(
         child: Center(
           child: TextButton(
-              onPressed: () {},
+              onPressed: controller.handleSignIn,
               child: Container(
                 child: Text("Google Login"),
               )),

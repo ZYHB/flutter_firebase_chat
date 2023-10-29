@@ -66,7 +66,8 @@ dependencies:
   event_bus_plus: ^0.6.1
   # 一个强大的 HTTP 网络包，支持拦截器、中止和取消请求、自定义适配器、转换器等。
   dio: ^5.3.2
-
+  # 一个纯粹的flutter toast库，支持自定义样式/小部件，轻松实现与原生toast相同的效果。
+  oktoast: ^3.3.1
   # Firebase Core 的 Flutter 插件，可连接到多个 Firebase 应用程序。
   firebase_core: ^2.15.1
   # 适用于 Firebase Auth 的 Flutter 插件，支持使用密码、电话号码和 Google、Facebook 和 Twitter 等身份提供商进行 Android 和 iOS 身份验证。

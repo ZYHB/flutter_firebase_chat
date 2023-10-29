@@ -2,6 +2,50 @@
 
 使用 firebase 服务的 Flutter 聊天应用程序。此聊天应用程序基于 firebase firestore
 
+### 2023-10-27
+
+一、[创建数据库](https://console.firebase.google.com/project/flutter-firebase-chat-fbd3c/firestore)
+
+二、[对使用不同提供方的账号登录的用户进行身份验证和管理，而无需服务器端代码](https://console.firebase.google.com/project/flutter-firebase-chat-fbd3c/authentication/providers)
+
+三、添加依赖 [google_sign_in](https://pub-web.flutter-io.cn/packages/google_sign_in)
+
+1、如果您需要向后端服务器进行身份验证，您可以在 GoogleService-Info.plist 中添加 SERVER_CLIENT_ID 键值对。
+`SERVER_CLIENT_ID`可以从 iOS 应用对应的[GoogleService-Info.plist](https://console.firebase.google.com/project/flutter-firebase-chat-fbd3c/settings/general/ios:com.example.firebaseChat) 文件中获取到。
+
+2、然后将下面的 CFBundleURLTypes 属性添加到 [my_project]/ios/Runner/Info.plist 文件中。
+
+```
+<!-- Put me in the [my_project]/ios/Runner/Info.plist file -->
+<!-- Google Sign-in Section -->
+<key>CFBundleURLTypes</key>
+<array>
+	<dict>
+		<key>CFBundleTypeRole</key>
+		<string>Editor</string>
+		<key>CFBundleURLSchemes</key>
+		<array>
+			<!-- TODO Replace this value: -->
+			<!-- Copied from GoogleService-Info.plist key REVERSED_CLIENT_ID -->
+			<string>com.googleusercontent.apps.861823949799-vc35cprkp249096uujjn0vvnmcvjppkn</string>
+		</array>
+	</dict>
+</array>
+<!-- End of the Google Sign-in Section -->
+```
+
+3、作为将 GoogleService-Info.plist 添加到 Xcode 项目的替代方法，您可以在 Dart 代码中配置应用程序。 在这种情况下，请跳过步骤 3 到 7，并将 clientId 和 serverClientId 传递给 GoogleSignIn 构造函数：
+
+```
+GoogleSignIn _googleSignIn = GoogleSignIn(
+  ...
+  // The OAuth client id of your app. This is required.
+  clientId: ...,
+  // If you need to authenticate to a backend server, specify its OAuth client. This is optional.
+  serverClientId: ...,
+);
+```
+
 ### 2023-10-26
 
 1、[在 firebase 中添加项目](https://console.firebase.google.com/)
