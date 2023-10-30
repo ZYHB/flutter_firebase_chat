@@ -18,6 +18,7 @@ class GlobalConfig {
   static initThirdParty() async {
     await SharedPreferencesTool.getInstance();
     await Get.putAsync(() => StorageService().init());
+    Get.put(UserStore());
     Get.put(ConfigStore());
 
     await Firebase.initializeApp(
